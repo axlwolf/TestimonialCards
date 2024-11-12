@@ -1,0 +1,35 @@
+:root {
+  --dark-blue: #03122f;
+  --midnihgt-blue: #19305c;
+  --dark-purple: #413b61;
+  --lavander: #ae7dac;
+  --pale-pink: #f3dadf;
+  --peach: #f1916d;
+}
+.card-ax {
+  display: flex;
+}
+
+.basic {
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.basic .card-content {
+  width: 100%;
+  background-color: var(--dark-blue);
+  color: white;
+  border-radius: 25px;
+  padding: 1em 0.5em;
+}
+.basic .card-photo {
+  width: 100%;
+}
+
+.basic .card-photo figure {
+  img {
+    border-radius: 50%;
+    border: 1px solid var(--dark-purple);
+    background-color: var(--lavander);
+  }
+}

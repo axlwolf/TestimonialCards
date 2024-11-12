@@ -1,7 +1,7 @@
 {
-  "name": "vanillajs-hello",
+  "name": "testimonial-cards",
   "version": "1.0.0",
-  "description": "Professional Boilerplate for Vanilla.js Web Apps",
+  "description": "In this project, you are required to create a bunch of testimonial cards. Testimonials are quotes or statements from satisfied customers or users, often used on websites to build credibility and trust.",
   "private": true,
   "scripts": {
     "start": "webpack-dev-server --mode development --port 3000 --open",
@@ -10,11 +10,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/4GeeksAcademy/vanillajs-hello.git"
+    "url": "git+https://github.com/axlwolf/TestimonialCards.git"
   },
   "keywords": [
     "Vanilla.js",
-    "Boilerplate",
+    "Roadmap ",
     "WebPack",
     "Boilerplate",
     "BreatheCode"
@@ -24,12 +24,8 @@
       "@babel/preset-env"
     ]
   },
-  "author": "Alejandro Sanchez",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/4GeeksAcademy/vanillajs-hello/issues"
-  },
-  "homepage": "https://github.com/4GeeksAcademy/vanillajs-hello#readme",
+  "author": "Axel Lanuza <axlwolf@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "@popperjs/core": "^2.10.1",
     "bootstrap": "^5.1.1"
