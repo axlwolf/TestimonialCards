@@ -1,7 +1,12 @@
+/*TODO: missing styles for opacity on each slide and animate the slides*/
+
 #cardSlider {
-  width: 500px; /* Ajusta el ancho del slider */
+  width: 90vw; /* Ajusta el ancho del slider */
   position: relative;
   margin: 50px auto;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  overflow: hidden;
 }
 
 #cardSlider .slider-container {
@@ -11,29 +16,42 @@
 
 .slides {
   display: none; /* Ocultar todas las imágenes excepto la activa */
+  visibility: hidden; /* Ocultar las slides inicialmente */
+  opacity: 0;
   width: 100%;
+  transition: visibility 0s, opacity 0.8s ease-in; /* Transición de visibilidad y opacidad */
+}
+
+.slides img {
+  width: 100px;
+  background-color: darkblue;
+  border-radius: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .slides.active {
   display: block; /* Mostrar la imagen activa */
+  visibility: visible; /* Mostrar la slide activa */
+  opacity: 1;
+  transition: opacity 0.8s ease-in;
 }
 
 .nextSlide,
 .prevSlide {
+  font-family: "Font Awesome 5 Free";
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
   padding: 10px 15px;
   border: none;
   cursor: pointer;
 }
 
 .prevSlide {
-  left: 10px;
+  left: 25%;
 }
 
 .nextSlide {
-  right: 10px;
+  right: 25%;
 }

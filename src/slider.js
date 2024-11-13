@@ -1,5 +1,5 @@
 export const CardSlider = (sliderContainer, slidesData) => {
-  const $cardSlider = sliderContainer;
+  const $cardSlider = sliderContainer.querySelector(".slide-container");
 
   let currentSlide = 0;
 
@@ -7,8 +7,6 @@ export const CardSlider = (sliderContainer, slidesData) => {
 
   const slideTemplate = slideData => {
     return `<div class="card-ax slides">
-      <div class="nextSlide"></div>
-      <div class="prevSlide"></div>
       <div class="card-content">
         <p class="text">${slideData.review_text}</p>
       </div>
@@ -29,32 +27,29 @@ export const CardSlider = (sliderContainer, slidesData) => {
   });
 
   const $slides = document.querySelectorAll(".slides");
-  const $nextSlide = document.querySelector(".nextSlide");
-  const $prevSlide = document.querySelector(".prevSlide");
 
-  function showSlide(n) {
+  const showSlide = n => {
     $slides[currentSlide].classList.remove("active");
     currentSlide = (n + $slides.length) % $slides.length;
     $slides[currentSlide].classList.add("active");
-    addEventListenersToSlider();
-  }
+  };
+
+  const nextSlide = () => {
+    showSlide(currentSlide + 1);
+  };
+
+  const prevSlide = () => {
+    showSlide(currentSlide - 1);
+  };
 
   const addEventListenersToSlider = () => {
+    const $nextSlide = sliderContainer.querySelector(".nextSlide");
+    const $prevSlide = sliderContainer.querySelector(".prevSlide");
     $nextSlide.addEventListener("click", nextSlide);
     $prevSlide.addEventListener("click", prevSlide);
   };
 
-  function nextSlide() {
-    showSlide(currentSlide + 1);
-  }
-
-  function prevSlide() {
-    showSlide(currentSlide - 1);
-  }
-
-  $prevSlide.addEventListener("click", prevSlide);
-  $nextSlide.addEventListener("click", nextSlide);
-
   // Mostrar la primera imagen al cargar la página
   showSlide(currentSlide);
+  addEventListenersToSlider();
 };
