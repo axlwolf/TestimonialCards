@@ -1,0 +1,39 @@
+#cardSlider {
+  width: 500px; /* Ajusta el ancho del slider */
+  position: relative;
+  margin: 50px auto;
+}
+
+#cardSlider .slider-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.slides {
+  display: none; /* Ocultar todas las imágenes excepto la activa */
+  width: 100%;
+}
+
+.slides.active {
+  display: block; /* Mostrar la imagen activa */
+}
+
+.nextSlide,
+.prevSlide {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.prevSlide {
+  left: 10px;
+}
+
+.nextSlide {
+  right: 10px;
+}

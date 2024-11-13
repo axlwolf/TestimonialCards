@@ -1,35 +1,194 @@
 :root {
   --dark-blue: #03122f;
-  --midnihgt-blue: #19305c;
+  --midnight-blue: #19305c;
   --dark-purple: #413b61;
-  --lavander: #ae7dac;
+  --lavender: #ae7dac;
   --pale-pink: #f3dadf;
   --peach: #f1916d;
+  --white: #ffffff;
+  --grey: #f0f0f0;
+  --light-grey: #dcdcdc;
 }
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+}
+
+.cards.full-width {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1em;
+}
+
 .card-ax {
   display: flex;
+  flex-wrap: wrap; /* Allows the card to wrap on smaller screens */
+  justify-content: space-between;
+  border-radius: 25px;
+  margin: 1.5em 0;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
 }
 
 .basic {
-  flex-wrap: wrap;
-  justify-content: space-between;
+  background-color: var(--white);
+  color: var(--dark-blue);
+  /* border: 1px solid var(--light-grey); */
 }
 
 .basic .card-content {
   width: 100%;
+  padding: 1em;
   background-color: var(--dark-blue);
-  color: white;
+  color: var(--white);
   border-radius: 25px;
-  padding: 1em 0.5em;
+  position: relative;
+  text-align: left;
+  min-height: 170px;
 }
+
+.basic .card-content::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 13%;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid var(--dark-blue);
+  transform: rotate(180deg);
+}
+
+.basic .card-content p.text {
+  font-size: 1em;
+  font-weight: normal;
+  margin: 0;
+}
+
 .basic .card-photo {
   width: 100%;
+  display: flex;
+  margin: 0.5em;
+  max-width: 100%;
+  max-height: 90px;
 }
 
 .basic .card-photo figure {
-  img {
-    border-radius: 50%;
-    border: 1px solid var(--dark-purple);
-    background-color: var(--lavander);
-  }
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.basic .card-photo img {
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+  border: 2px solid var(--lavender);
+  background-color: var(--lavender);
+  width: 80px;
+  height: 80px;
+  margin-right: 0.6em;
+  margin-top: 0.4em;
+  object-fit: cover; /* Ensures the image covers the entire area while maintaining aspect ratio */
+}
+
+.basic .card-photo figcaption {
+  text-align: left;
+  align-self: auto;
+}
+
+.basic .card-photo p {
+  margin: 0;
+}
+
+.basic .card-photo p.name {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.basic .card-photo p.profession {
+  font-size: 0.9em;
+  color: var(--dark-purple);
+}
+
+/* Styles for basic card two */
+
+.basic.basic-two {
+  border: 1px solid var(--midnight-blue);
+}
+
+.basic.basic-two .card-content {
+  width: 100%;
+  padding: 1em;
+  background-color: var(--white);
+  color: var(--dark-blue);
+  border-radius: 25px;
+  position: relative;
+  text-align: left;
+  min-height: 170px;
+}
+
+.basic.basic-two .card-content::before {
+  content: "";
+  position: absolute;
+  border: 0;
+}
+
+/* Styles for complex card  */
+
+.complex {
+  display: grid;
+  grid-template-columns: 33% 66%;
+  gap: 0.5em;
+}
+
+.complex .card-content {
+  background-color: var(--dark-blue);
+  color: var(--light-grey);
+  text-align: left;
+  height: 215px;
+  padding: 1rem;
+  border-radius: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.complex .card-content p {
+  margin: 0;
+  width: 100%;
+}
+
+.complex .card-content p.name {
+  font-size: 1.2em;
+  margin-bottom: -0.3em;
+  font-weight: bold;
+}
+
+.complex .card-content p.profession {
+  margin-bottom: 0.5em;
+  font-size: 0.9em;
+  color: var(--lavender);
+}
+
+.complex .card-photo img {
+  width: 100%;
+  height: 215px;
+  background-color: var(--dark-purple);
+  border-radius: 25px;
+}
+
+.complex .card-rating {
+  margin: 0 0 0.5em 0;
+  width: 100%;
 }
